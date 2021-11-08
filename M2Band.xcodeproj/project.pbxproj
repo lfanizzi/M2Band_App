@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		033BADF32739C61C0037E9ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 033BADF22739C61C0037E9ED /* LaunchScreen.storyboard */; };
 		EA01E6FD271F822A0090B5E7 /* M2BandApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA01E6FC271F822A0090B5E7 /* M2BandApp.swift */; };
-		EA01E6FF271F822A0090B5E7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA01E6FE271F822A0090B5E7 /* ContentView.swift */; };
 		EA01E701271F822D0090B5E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA01E700271F822D0090B5E7 /* Assets.xcassets */; };
 		EA01E704271F822D0090B5E7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA01E703271F822D0090B5E7 /* Preview Assets.xcassets */; };
 		EA01E70E271F822E0090B5E7 /* M2BandTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA01E70D271F822E0090B5E7 /* M2BandTests.swift */; };
@@ -41,7 +40,6 @@
 		033BADF22739C61C0037E9ED /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EA01E6F9271F822A0090B5E7 /* M2Band.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = M2Band.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA01E6FC271F822A0090B5E7 /* M2BandApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = M2BandApp.swift; sourceTree = "<group>"; };
-		EA01E6FE271F822A0090B5E7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EA01E700271F822D0090B5E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EA01E703271F822D0090B5E7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EA01E709271F822E0090B5E7 /* M2BandTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = M2BandTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -103,7 +101,6 @@
 			isa = PBXGroup;
 			children = (
 				EA01E6FC271F822A0090B5E7 /* M2BandApp.swift */,
-				EA01E6FE271F822A0090B5E7 /* ContentView.swift */,
 				EA01E75E2728A1670090B5E7 /* mclovin().swift */,
 				EA01E700271F822D0090B5E7 /* Assets.xcassets */,
 				EA01E7602728A2B10090B5E7 /* band.swift */,
@@ -272,7 +269,6 @@
 			files = (
 				EA9B1E8B2739CDD100C0F7DD /* Main_Screen.swift in Sources */,
 				EA01E75F2728A1670090B5E7 /* mclovin().swift in Sources */,
-				EA01E6FF271F822A0090B5E7 /* ContentView.swift in Sources */,
 				EA01E7612728A2B10090B5E7 /* band.swift in Sources */,
 				EA01E6FD271F822A0090B5E7 /* M2BandApp.swift in Sources */,
 			);

@@ -11,7 +11,7 @@ import SwiftUI
 struct M2BandApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            Main_Screen()
             
         }
     }

@@ -17,6 +17,7 @@
 		EA01E71A271F822E0090B5E7 /* M2BandUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA01E719271F822E0090B5E7 /* M2BandUITestsLaunchTests.swift */; };
 		EA01E75F2728A1670090B5E7 /* mclovin().swift in Sources */ = {isa = PBXBuildFile; fileRef = EA01E75E2728A1670090B5E7 /* mclovin().swift */; };
 		EA01E7612728A2B10090B5E7 /* band.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA01E7602728A2B10090B5E7 /* band.swift */; };
+		EA9B1E8B2739CDD100C0F7DD /* Main_Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9B1E8A2739CDD100C0F7DD /* Main_Screen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		EA01E719271F822E0090B5E7 /* M2BandUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = M2BandUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		EA01E75E2728A1670090B5E7 /* mclovin().swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "mclovin().swift"; sourceTree = "<group>"; };
 		EA01E7602728A2B10090B5E7 /* band.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = band.swift; sourceTree = "<group>"; };
+		EA9B1E8A2739CDD100C0F7DD /* Main_Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main_Screen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 				EA01E7602728A2B10090B5E7 /* band.swift */,
 				EA01E702271F822D0090B5E7 /* Preview Content */,
 				033BADF22739C61C0037E9ED /* LaunchScreen.storyboard */,
+				EA9B1E8A2739CDD100C0F7DD /* Main_Screen.swift */,
 			);
 			path = M2Band;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA9B1E8B2739CDD100C0F7DD /* Main_Screen.swift in Sources */,
 				EA01E75F2728A1670090B5E7 /* mclovin().swift in Sources */,
 				EA01E6FF271F822A0090B5E7 /* ContentView.swift in Sources */,
 				EA01E7612728A2B10090B5E7 /* band.swift in Sources */,

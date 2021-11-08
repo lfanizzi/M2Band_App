@@ -12,6 +12,7 @@ struct M2BandApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+            
         }
     }
 }

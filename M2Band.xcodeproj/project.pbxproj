@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		033BADF32739C61C0037E9ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 033BADF22739C61C0037E9ED /* LaunchScreen.storyboard */; };
 		EA01E6FD271F822A0090B5E7 /* M2BandApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA01E6FC271F822A0090B5E7 /* M2BandApp.swift */; };
 		EA01E6FF271F822A0090B5E7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA01E6FE271F822A0090B5E7 /* ContentView.swift */; };
 		EA01E701271F822D0090B5E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA01E700271F822D0090B5E7 /* Assets.xcassets */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		033BADF22739C61C0037E9ED /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EA01E6F9271F822A0090B5E7 /* M2Band.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = M2Band.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA01E6FC271F822A0090B5E7 /* M2BandApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = M2BandApp.swift; sourceTree = "<group>"; };
 		EA01E6FE271F822A0090B5E7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 				EA01E700271F822D0090B5E7 /* Assets.xcassets */,
 				EA01E7602728A2B10090B5E7 /* band.swift */,
 				EA01E702271F822D0090B5E7 /* Preview Content */,
+				033BADF22739C61C0037E9ED /* LaunchScreen.storyboard */,
 			);
 			path = M2Band;
 			sourceTree = "<group>";
@@ -237,6 +240,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				033BADF32739C61C0037E9ED /* LaunchScreen.storyboard in Resources */,
 				EA01E704271F822D0090B5E7 /* Preview Assets.xcassets in Resources */,
 				EA01E701271F822D0090B5E7 /* Assets.xcassets in Resources */,
 			);
@@ -433,6 +437,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -463,6 +468,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;

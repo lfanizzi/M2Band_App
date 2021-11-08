@@ -14,8 +14,10 @@ struct ContentView: View {
         VStack{
             Image("band").frame(width: 250, height: 200 ).clipShape(Circle()).overlay(Circle().stroke(Color.gray,lineWidth: 4))
             
-            Text("Welcome to M2Band")
-                .fontWeight(.bold).foregroundColor(.green).font(.title)
+            
+            NavigationView{
+                Text("M2Band").fontWeight(.bold).foregroundColor(.green).font(.title).frame(width: 250, height: 100)
+            }
         
             Text("Devloped by Team Greenies").fontWeight(.light).foregroundColor(.green)
             

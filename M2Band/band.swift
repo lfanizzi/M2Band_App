@@ -9,8 +9,8 @@ import SwiftUI
 
 struct band: View {
     var body: some View {
-        Image("band")  .resizable().frame(width: 300.0, height: 350.0)
-        .overlay(Circle().stroke(Color.gray,lineWidth: 4)).clipShape(Circle())
+        Image("band")  .resizable().imageScale(.small)
+            .overlay(Circle().stroke(Color.gray,lineWidth: 4)).clipShape(Circle())
     }
 }
 

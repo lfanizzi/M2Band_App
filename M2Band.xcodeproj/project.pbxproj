@@ -14,9 +14,12 @@
 		EA01E70E271F822E0090B5E7 /* M2BandTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA01E70D271F822E0090B5E7 /* M2BandTests.swift */; };
 		EA01E718271F822E0090B5E7 /* M2BandUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA01E717271F822E0090B5E7 /* M2BandUITests.swift */; };
 		EA01E71A271F822E0090B5E7 /* M2BandUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA01E719271F822E0090B5E7 /* M2BandUITestsLaunchTests.swift */; };
-		EA01E75F2728A1670090B5E7 /* mclovin().swift in Sources */ = {isa = PBXBuildFile; fileRef = EA01E75E2728A1670090B5E7 /* mclovin().swift */; };
 		EA01E7612728A2B10090B5E7 /* band.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA01E7602728A2B10090B5E7 /* band.swift */; };
+		EA8537BB275981D200AB5E63 /* BT.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8537BA275981D200AB5E63 /* BT.swift */; };
 		EA9B1E8B2739CDD100C0F7DD /* Main_Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9B1E8A2739CDD100C0F7DD /* Main_Screen.swift */; };
+		EA9B1E8E273AD29100C0F7DD /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EA9B1E8D273AD29100C0F7DD /* Icon.png */; };
+		EAEEB3EB275691EC007ED3C3 /* BT Connect Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEEB3EA275691EC007ED3C3 /* BT Connect Screen.swift */; };
+		EAEEB4232756CDBD007ED3C3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEEB4222756CDBD007ED3C3 /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +42,7 @@
 /* Begin PBXFileReference section */
 		033BADF22739C61C0037E9ED /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EA01E6F9271F822A0090B5E7 /* M2Band.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = M2Band.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		EA01E6FC271F822A0090B5E7 /* M2BandApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = M2BandApp.swift; sourceTree = "<group>"; };
+		EA01E6FC271F822A0090B5E7 /* M2BandApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = M2BandApp.swift; path = M2Band/M2BandApp.swift; sourceTree = SOURCE_ROOT; };
 		EA01E700271F822D0090B5E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EA01E703271F822D0090B5E7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EA01E709271F822E0090B5E7 /* M2BandTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = M2BandTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,9 +50,12 @@
 		EA01E713271F822E0090B5E7 /* M2BandUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = M2BandUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA01E717271F822E0090B5E7 /* M2BandUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = M2BandUITests.swift; sourceTree = "<group>"; };
 		EA01E719271F822E0090B5E7 /* M2BandUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = M2BandUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		EA01E75E2728A1670090B5E7 /* mclovin().swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "mclovin().swift"; sourceTree = "<group>"; };
 		EA01E7602728A2B10090B5E7 /* band.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = band.swift; sourceTree = "<group>"; };
-		EA9B1E8A2739CDD100C0F7DD /* Main_Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main_Screen.swift; sourceTree = "<group>"; };
+		EA8537BA275981D200AB5E63 /* BT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BT.swift; sourceTree = "<group>"; };
+		EA9B1E8A2739CDD100C0F7DD /* Main_Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Main_Screen.swift; path = M2Band/Main_Screen.swift; sourceTree = SOURCE_ROOT; };
+		EA9B1E8D273AD29100C0F7DD /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../../Icon.png; sourceTree = "<group>"; };
+		EAEEB3EA275691EC007ED3C3 /* BT Connect Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "BT Connect Screen.swift"; path = "M2Band/BT Connect Screen.swift"; sourceTree = SOURCE_ROOT; };
+		EAEEB4222756CDBD007ED3C3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,13 +106,16 @@
 		EA01E6FB271F822A0090B5E7 /* M2Band */ = {
 			isa = PBXGroup;
 			children = (
-				EA01E6FC271F822A0090B5E7 /* M2BandApp.swift */,
-				EA01E75E2728A1670090B5E7 /* mclovin().swift */,
-				EA01E700271F822D0090B5E7 /* Assets.xcassets */,
-				EA01E7602728A2B10090B5E7 /* band.swift */,
-				EA01E702271F822D0090B5E7 /* Preview Content */,
+				EAEEB4222756CDBD007ED3C3 /* ViewController.swift */,
 				033BADF22739C61C0037E9ED /* LaunchScreen.storyboard */,
+				EA01E6FC271F822A0090B5E7 /* M2BandApp.swift */,
 				EA9B1E8A2739CDD100C0F7DD /* Main_Screen.swift */,
+				EAEEB3EA275691EC007ED3C3 /* BT Connect Screen.swift */,
+				EA01E7602728A2B10090B5E7 /* band.swift */,
+				EA01E700271F822D0090B5E7 /* Assets.xcassets */,
+				EA9B1E8D273AD29100C0F7DD /* Icon.png */,
+				EA01E702271F822D0090B5E7 /* Preview Content */,
+				EA8537BA275981D200AB5E63 /* BT.swift */,
 			);
 			path = M2Band;
 			sourceTree = "<group>";
@@ -243,6 +252,7 @@
 				033BADF32739C61C0037E9ED /* LaunchScreen.storyboard in Resources */,
 				EA01E704271F822D0090B5E7 /* Preview Assets.xcassets in Resources */,
 				EA01E701271F822D0090B5E7 /* Assets.xcassets in Resources */,
+				EA9B1E8E273AD29100C0F7DD /* Icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,10 +277,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAEEB4232756CDBD007ED3C3 /* ViewController.swift in Sources */,
 				EA9B1E8B2739CDD100C0F7DD /* Main_Screen.swift in Sources */,
-				EA01E75F2728A1670090B5E7 /* mclovin().swift in Sources */,
 				EA01E7612728A2B10090B5E7 /* band.swift in Sources */,
+				EAEEB3EB275691EC007ED3C3 /* BT Connect Screen.swift in Sources */,
 				EA01E6FD271F822A0090B5E7 /* M2BandApp.swift in Sources */,
+				EA8537BB275981D200AB5E63 /* BT.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

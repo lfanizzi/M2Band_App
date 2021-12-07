@@ -20,7 +20,8 @@ struct M2BandApp: App {
            
            
         
-               Main_Screen()
+              Main_Screen()
+            
             
             
            // switchViews(is_BT: changeBT(BT: get_is_BT()))

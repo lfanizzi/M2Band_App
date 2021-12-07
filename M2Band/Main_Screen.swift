@@ -5,27 +5,44 @@
 import SwiftUI
 import CoreBluetooth
 import CoreGraphics
+import UIKit
 
-var heart = 0
-var O2 = 0
-var steps = 0
+
+var heart = 120
+var O2 = 98
+var steps = 2156
 //var Progress = 0
 //@main
+//@State var progressValue: Float = 0.0
 
 struct Main_Screen: View{
-    @State public var Progress = 0
+    @State public var Progress = 100
     @State public var BT = false
     var body: some View {
         NavigationView{
         VStack{
+            
+            Text("M2Band").fontWeight(.bold).font(.title)
+        
+            
             HStack{
-            Text("M2Band").fontWeight(.bold).padding().font(.largeTitle)
-            }
             Text("Heart Rate (BPM) : \(heart)").fontWeight(.bold).padding().foregroundColor(.red)
-            Text("Blood O2 Level: \(O2)").fontWeight(.bold).padding().foregroundColor(.blue)
-            Text("Steps: \(steps)").fontWeight(.bold).padding().foregroundColor(.green)
-            Text("Progress: \(Progress)").fontWeight(.bold).padding()
-         
+                Image("heart_icon").resizable().frame(width: 25, height: 25)
+            }
+            HStack{
+            Text("Blood O2 Level: \(O2)    ").fontWeight(.bold).padding().foregroundColor(.blue)
+            Image("oxy_icon").resizable().frame(width: 50, height: 35)
+            }
+            HStack{
+                Text("Steps: \(steps)                ").fontWeight(.bold).padding().foregroundColor(.green)
+                
+                Image("steps_icon").resizable().frame(width: 50, height: 35)
+            }
+            HStack{
+            Text("Progress: \(Progress)             ").fontWeight(.bold).padding()
+                Image("progress_icon").resizable().frame(width: 50, height: 50)
+            }
+           
            // Text("BT bool is: \(is_BT)" as String)
             NavigationLink(destination: BT_Connect_Screen()){
                 Text("Bluetooth")

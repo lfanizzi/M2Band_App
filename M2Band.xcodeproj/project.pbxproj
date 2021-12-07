@@ -18,6 +18,7 @@
 		EA8537BB275981D200AB5E63 /* BT.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8537BA275981D200AB5E63 /* BT.swift */; };
 		EA9B1E8B2739CDD100C0F7DD /* Main_Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9B1E8A2739CDD100C0F7DD /* Main_Screen.swift */; };
 		EA9B1E8E273AD29100C0F7DD /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EA9B1E8D273AD29100C0F7DD /* Icon.png */; };
+		EAD853E6275E93010048324A /* progressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD853E5275E93000048324A /* progressView.swift */; };
 		EAEEB3EB275691EC007ED3C3 /* BT Connect Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEEB3EA275691EC007ED3C3 /* BT Connect Screen.swift */; };
 		EAEEB4232756CDBD007ED3C3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEEB4222756CDBD007ED3C3 /* ViewController.swift */; };
 /* End PBXBuildFile section */
@@ -54,6 +55,7 @@
 		EA8537BA275981D200AB5E63 /* BT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BT.swift; sourceTree = "<group>"; };
 		EA9B1E8A2739CDD100C0F7DD /* Main_Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Main_Screen.swift; path = M2Band/Main_Screen.swift; sourceTree = SOURCE_ROOT; };
 		EA9B1E8D273AD29100C0F7DD /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../../Icon.png; sourceTree = "<group>"; };
+		EAD853E5275E93000048324A /* progressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = progressView.swift; sourceTree = "<group>"; };
 		EAEEB3EA275691EC007ED3C3 /* BT Connect Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "BT Connect Screen.swift"; path = "M2Band/BT Connect Screen.swift"; sourceTree = SOURCE_ROOT; };
 		EAEEB4222756CDBD007ED3C3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -107,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				EAEEB4222756CDBD007ED3C3 /* ViewController.swift */,
+				EAD853E5275E93000048324A /* progressView.swift */,
 				033BADF22739C61C0037E9ED /* LaunchScreen.storyboard */,
 				EA01E6FC271F822A0090B5E7 /* M2BandApp.swift */,
 				EA9B1E8A2739CDD100C0F7DD /* Main_Screen.swift */,
@@ -283,6 +286,7 @@
 				EAEEB3EB275691EC007ED3C3 /* BT Connect Screen.swift in Sources */,
 				EA01E6FD271F822A0090B5E7 /* M2BandApp.swift in Sources */,
 				EA8537BB275981D200AB5E63 /* BT.swift in Sources */,
+				EAD853E6275E93010048324A /* progressView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,6 +444,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"M2Band/Preview Content\"";
@@ -450,6 +455,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -471,6 +477,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"M2Band/Preview Content\"";
@@ -481,6 +488,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;

@@ -7,6 +7,12 @@
 
 import SwiftUI
 import CoreBluetooth
+import UIKit
+var centralManager: CBCentralManager!
+
+var discoveredPeripheral: CBPeripheral?
+var transferCharacteristic: CBCharacteristic?
+var data = Data()
 
 struct BT_Connect_Screen: View {
   
@@ -36,7 +42,7 @@ struct BT_Connect_Screen: View {
         
             
             Button("Scan For Devices"){
-              scan()
+               
                
             }.padding()
             
@@ -47,13 +53,4 @@ struct BT_Connect_Screen: View {
     }
 }
 
-public func scan(){
-    let options: [String: Any] = [CBCentralManagerScanOptionAllowDuplicatesKey:
-                                  NSNumber(value: false)]
-    //centralManager = CBCentralManager(delegate: self, queue: .main)
-}
-struct BT_Connect_Screen_Previews: PreviewProvider {
-    static var previews: some View {
-        BT_Connect_Screen()
-    }
-}
+

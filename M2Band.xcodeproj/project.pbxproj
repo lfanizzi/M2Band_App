@@ -18,6 +18,7 @@
 		EA8537BB275981D200AB5E63 /* BT.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8537BA275981D200AB5E63 /* BT.swift */; };
 		EA9B1E8B2739CDD100C0F7DD /* Main_Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9B1E8A2739CDD100C0F7DD /* Main_Screen.swift */; };
 		EA9B1E8E273AD29100C0F7DD /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EA9B1E8D273AD29100C0F7DD /* Icon.png */; };
+		EAD5F3FB275FFB7E00B23576 /* TransferService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD5F3FA275FFB7E00B23576 /* TransferService.swift */; };
 		EAD853E6275E93010048324A /* progressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD853E5275E93000048324A /* progressView.swift */; };
 		EAEEB3EB275691EC007ED3C3 /* BT Connect Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEEB3EA275691EC007ED3C3 /* BT Connect Screen.swift */; };
 		EAEEB4232756CDBD007ED3C3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEEB4222756CDBD007ED3C3 /* ViewController.swift */; };
@@ -55,6 +56,7 @@
 		EA8537BA275981D200AB5E63 /* BT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BT.swift; sourceTree = "<group>"; };
 		EA9B1E8A2739CDD100C0F7DD /* Main_Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Main_Screen.swift; path = M2Band/Main_Screen.swift; sourceTree = SOURCE_ROOT; };
 		EA9B1E8D273AD29100C0F7DD /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../../Icon.png; sourceTree = "<group>"; };
+		EAD5F3FA275FFB7E00B23576 /* TransferService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferService.swift; sourceTree = "<group>"; };
 		EAD853E5275E93000048324A /* progressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = progressView.swift; sourceTree = "<group>"; };
 		EAEEB3EA275691EC007ED3C3 /* BT Connect Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "BT Connect Screen.swift"; path = "M2Band/BT Connect Screen.swift"; sourceTree = SOURCE_ROOT; };
 		EAEEB4222756CDBD007ED3C3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -88,6 +90,7 @@
 		EA01E6F0271F822A0090B5E7 = {
 			isa = PBXGroup;
 			children = (
+				EAD5F3FA275FFB7E00B23576 /* TransferService.swift */,
 				EA01E6FB271F822A0090B5E7 /* M2Band */,
 				EA01E70C271F822E0090B5E7 /* M2BandTests */,
 				EA01E716271F822E0090B5E7 /* M2BandUITests */,
@@ -286,6 +289,7 @@
 				EAEEB3EB275691EC007ED3C3 /* BT Connect Screen.swift in Sources */,
 				EA01E6FD271F822A0090B5E7 /* M2BandApp.swift in Sources */,
 				EA8537BB275981D200AB5E63 /* BT.swift in Sources */,
+				EAD5F3FB275FFB7E00B23576 /* TransferService.swift in Sources */,
 				EAD853E6275E93010048324A /* progressView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -374,7 +378,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -429,7 +433,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -446,8 +450,8 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"M2Band/Preview Content\"";
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_ASSET_PATHS = "M2Band/Preview\\ Content ../Icon.png";
 				DEVELOPMENT_TEAM = 642S7756HW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -463,7 +467,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = SeniorDesign.M2Band;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -479,8 +483,8 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"M2Band/Preview Content\"";
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_ASSET_PATHS = "M2Band/Preview\\ Content ../Icon.png";
 				DEVELOPMENT_TEAM = 642S7756HW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -496,7 +500,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = SeniorDesign.M2Band;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

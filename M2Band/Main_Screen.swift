@@ -21,10 +21,10 @@ struct Main_Screen: View{
    // var components : Array<String> = Array()
     @State public var Progress = 0//87
     @State public var BT = false
-    @State public var heart = 0//81
+    @State var heart  = 0//81
     @State public var O2 = 0//98
     @State public var steps = 0//2156
-    @State public var temp = 0//98
+    @State public var temp = 0.0//98
     var body: some View {
         
         NavigationView{
@@ -47,7 +47,7 @@ struct Main_Screen: View{
                 Image("steps_icon").resizable().frame(width: 50, height: 35)
             }
             HStack{
-                Text("   Temperature: \(temp)     ").fontWeight(.bold).padding().foregroundColor(.orange)
+                Text("   Temperature: \(Int(temp))     ").fontWeight(.bold).padding().foregroundColor(.orange)
                 Image("thermo_icon").resizable().frame(width: 75, height: 75)
             }
             HStack{
@@ -60,7 +60,7 @@ struct Main_Screen: View{
           //  }.padding()
             // NavigationLink( destination: BT_Connect_Screen()){
                // Text("Bluetooth").bold().padding()
-            NavigationLink( destination: ServerCom()){
+            NavigationLink( destination: ServerCom(heart: $heart, O2:$O2, steps:$steps, temp:$temp)){
                  Text("Fetch Data").bold().padding()
             }
             

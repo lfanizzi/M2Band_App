@@ -11,12 +11,18 @@ import UIKit
 
 struct ServerCom: View {
    
-    @State var v = "c"
+    //@State var v = "c"
     @State var data1 = ""
-    @State var indexing = 0
-    @State var temp = ""
-    @State var heart2 = 0
+    //@State var indexing = 0
+    //@State var temp = ""
+    //@State var heart2 = 0
+   
+    @Binding var heart : Int
+    @Binding var O2 : Int
+    @Binding var steps : Int
+    @Binding var temp : Double
     var components : Array<String> = Array()
+    var components2 : Array<String> = Array()
     var body: some View {
     
        // Text("Here is the Fetched Data: ").padding().font(.title)
@@ -43,7 +49,6 @@ struct ServerCom: View {
         // Create URL Request
         var request = URLRequest(url: requestUrl)
 
-        // Specify HTTP Method to use
         request.httpMethod = "GET"
        
 
@@ -63,26 +68,42 @@ struct ServerCom: View {
             
             // Convert HTTP Response Data to a simple String
             if let data = data, let dataString = String(data: data, encoding: .utf8) {
-                //print("Response data string:\n \(dataString)")
                 data1 = dataString
-            
-                var components = dataString.components(separatedBy: ":")
-                print(components)
             }
-                var x = 0
-                for i in components{
-                    if(i.elementsEqual("heart_rate")){
-                        temp = components[x+1]
-                        return
-                    }
-                        x+=1
-                }
+            
+            var components = data1.replacingOccurrences(of: "\"", with: "").replacingOccurrences(of: "[", with: "").replacingOccurrences(of: "{", with: "").replacingOccurrences(of: "}", with: "").replacingOccurrences(of: "]", with: "").replacingOccurrences(of: " ", with: "").replacingOccurrences(of: "\"", with: "").replacingOccurrences(of: "data:", with: "").replacingOccurrences(of: "message:sensordataforallusers", with: "").components(separatedBy: ",")
                 
+               
+           //Below is for extracting data to binding components
+            for i in components{
+                if i.contains("heart_rate"){
+                   let i = i.replacingOccurrences(of: "heart_rate:", with: "")
+                    heart = Int(i)!
+                    break
+                }
+            }
             
-            let heart2 = Int(temp) ?? 0
+            for i in components{
+                if i.contains("blood_o2"){
+                   let i = i.replacingOccurrences(of: "blood_o2:", with: "")
+                    O2 = Int(i)!
+                    break
+                }
+            }
             
-              print(heart2)
-    
+            for i in components{
+                if i.contains("temperature"){
+                   let i = i.replacingOccurrences(of: "temperature:", with: "")
+                    //print(i)
+                    temp = Double(i)!
+                    
+                    break
+                }
+            }
+            
+           
+            
+            
                 
             }
        

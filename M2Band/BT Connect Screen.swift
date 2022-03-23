@@ -8,6 +8,9 @@
 import SwiftUI
 import CoreBluetooth
 import UIKit
+import os
+import OSLog
+
 var centralManager: CBCentralManager!
 
 var discoveredPeripheral: CBPeripheral?
@@ -20,6 +23,7 @@ struct BT_Connect_Screen: View {
        // var i = 1
         var deviceList: [String] = ["iPhone", "iPad", "Mac"]
         VStack{
+            Image("blue_icon").resizable().frame(width: 50, height: 50)
             Text("Bluetooth Devices: ").bold().foregroundColor(.blue).padding()
             HStack{
                 List{
@@ -42,7 +46,7 @@ struct BT_Connect_Screen: View {
         
             
             Button("Scan For Devices"){
-               
+               scan()
                
             }.padding()
             
@@ -53,4 +57,10 @@ struct BT_Connect_Screen: View {
     }
 }
 
-
+public func connect_server(){
+    
+}
+public func scan(){
+    
+    
+}

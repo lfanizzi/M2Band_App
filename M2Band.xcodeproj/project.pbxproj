@@ -15,11 +15,14 @@
 		EA01E718271F822E0090B5E7 /* M2BandUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA01E717271F822E0090B5E7 /* M2BandUITests.swift */; };
 		EA01E71A271F822E0090B5E7 /* M2BandUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA01E719271F822E0090B5E7 /* M2BandUITestsLaunchTests.swift */; };
 		EA01E7612728A2B10090B5E7 /* band.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA01E7602728A2B10090B5E7 /* band.swift */; };
+		EA3A838F277CB9C2002DE2E1 /* server.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3A838E277CB9C2002DE2E1 /* server.swift */; };
 		EA8537BB275981D200AB5E63 /* BT.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8537BA275981D200AB5E63 /* BT.swift */; };
 		EA9B1E8B2739CDD100C0F7DD /* Main_Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9B1E8A2739CDD100C0F7DD /* Main_Screen.swift */; };
 		EA9B1E8E273AD29100C0F7DD /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EA9B1E8D273AD29100C0F7DD /* Icon.png */; };
+		EAB31F7E27E8FFBE00DADA8A /* ServerCom.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB31F7D27E8FFBE00DADA8A /* ServerCom.swift */; };
 		EAD5F3FB275FFB7E00B23576 /* TransferService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD5F3FA275FFB7E00B23576 /* TransferService.swift */; };
 		EAD853E6275E93010048324A /* progressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD853E5275E93000048324A /* progressView.swift */; };
+		EAE29EA927D7CE8800F66357 /* DataCom.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE29EA827D7CE8800F66357 /* DataCom.swift */; };
 		EAEEB3EB275691EC007ED3C3 /* BT Connect Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEEB3EA275691EC007ED3C3 /* BT Connect Screen.swift */; };
 		EAEEB4232756CDBD007ED3C3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEEB4222756CDBD007ED3C3 /* ViewController.swift */; };
 /* End PBXBuildFile section */
@@ -53,11 +56,14 @@
 		EA01E717271F822E0090B5E7 /* M2BandUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = M2BandUITests.swift; sourceTree = "<group>"; };
 		EA01E719271F822E0090B5E7 /* M2BandUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = M2BandUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		EA01E7602728A2B10090B5E7 /* band.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = band.swift; sourceTree = "<group>"; };
+		EA3A838E277CB9C2002DE2E1 /* server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = server.swift; sourceTree = "<group>"; };
 		EA8537BA275981D200AB5E63 /* BT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BT.swift; sourceTree = "<group>"; };
 		EA9B1E8A2739CDD100C0F7DD /* Main_Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Main_Screen.swift; path = M2Band/Main_Screen.swift; sourceTree = SOURCE_ROOT; };
 		EA9B1E8D273AD29100C0F7DD /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../../Icon.png; sourceTree = "<group>"; };
+		EAB31F7D27E8FFBE00DADA8A /* ServerCom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerCom.swift; sourceTree = "<group>"; };
 		EAD5F3FA275FFB7E00B23576 /* TransferService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferService.swift; sourceTree = "<group>"; };
 		EAD853E5275E93000048324A /* progressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = progressView.swift; sourceTree = "<group>"; };
+		EAE29EA827D7CE8800F66357 /* DataCom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCom.swift; sourceTree = "<group>"; };
 		EAEEB3EA275691EC007ED3C3 /* BT Connect Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "BT Connect Screen.swift"; path = "M2Band/BT Connect Screen.swift"; sourceTree = SOURCE_ROOT; };
 		EAEEB4222756CDBD007ED3C3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -90,6 +96,9 @@
 		EA01E6F0271F822A0090B5E7 = {
 			isa = PBXGroup;
 			children = (
+				EAD853E5275E93000048324A /* progressView.swift */,
+				EA3A838E277CB9C2002DE2E1 /* server.swift */,
+				EAEEB4222756CDBD007ED3C3 /* ViewController.swift */,
 				EAD5F3FA275FFB7E00B23576 /* TransferService.swift */,
 				EA01E6FB271F822A0090B5E7 /* M2Band */,
 				EA01E70C271F822E0090B5E7 /* M2BandTests */,
@@ -111,11 +120,11 @@
 		EA01E6FB271F822A0090B5E7 /* M2Band */ = {
 			isa = PBXGroup;
 			children = (
-				EAEEB4222756CDBD007ED3C3 /* ViewController.swift */,
-				EAD853E5275E93000048324A /* progressView.swift */,
-				033BADF22739C61C0037E9ED /* LaunchScreen.storyboard */,
 				EA01E6FC271F822A0090B5E7 /* M2BandApp.swift */,
 				EA9B1E8A2739CDD100C0F7DD /* Main_Screen.swift */,
+				EAB31F7D27E8FFBE00DADA8A /* ServerCom.swift */,
+				EAE29EA827D7CE8800F66357 /* DataCom.swift */,
+				033BADF22739C61C0037E9ED /* LaunchScreen.storyboard */,
 				EAEEB3EA275691EC007ED3C3 /* BT Connect Screen.swift */,
 				EA01E7602728A2B10090B5E7 /* band.swift */,
 				EA01E700271F822D0090B5E7 /* Assets.xcassets */,
@@ -285,12 +294,15 @@
 			files = (
 				EAEEB4232756CDBD007ED3C3 /* ViewController.swift in Sources */,
 				EA9B1E8B2739CDD100C0F7DD /* Main_Screen.swift in Sources */,
+				EA3A838F277CB9C2002DE2E1 /* server.swift in Sources */,
+				EAB31F7E27E8FFBE00DADA8A /* ServerCom.swift in Sources */,
 				EA01E7612728A2B10090B5E7 /* band.swift in Sources */,
 				EAEEB3EB275691EC007ED3C3 /* BT Connect Screen.swift in Sources */,
 				EA01E6FD271F822A0090B5E7 /* M2BandApp.swift in Sources */,
 				EA8537BB275981D200AB5E63 /* BT.swift in Sources */,
 				EAD5F3FB275FFB7E00B23576 /* TransferService.swift in Sources */,
 				EAD853E6275E93010048324A /* progressView.swift in Sources */,
+				EAE29EA927D7CE8800F66357 /* DataCom.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

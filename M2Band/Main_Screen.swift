@@ -19,6 +19,7 @@ struct Main_Screen: View{
    // @State var tempvar = ""
    // @State var heart2 = 0
    // var components : Array<String> = Array()
+    @State public var user_id = ""
     @State public var Progress = 0//87
     @State public var BT = false
     @State var heart  = 0//81
@@ -28,6 +29,8 @@ struct Main_Screen: View{
     var body: some View {
         
         NavigationView{
+    ZStack{
+        //Color.gray
         VStack{
             
             Text("M2Band").fontWeight(.bold).font(.title)
@@ -50,25 +53,28 @@ struct Main_Screen: View{
                 Text("   Temperature: \(Int(temp))     ").fontWeight(.bold).padding().foregroundColor(.orange)
                 Image("thermo_icon").resizable().frame(width: 75, height: 75)
             }
+            /*
             HStack{
                 Text("Progress: \(Progress)              ").fontWeight(.bold).padding().foregroundColor(.yellow)
                 Image("progress_icon").resizable().frame(width: 50, height: 50)
             }
+             */
             Spacer()
-           // Button("Test GET Request"){
-               // get_request()
-          //  }.padding()
+           
             // NavigationLink( destination: BT_Connect_Screen()){
                // Text("Bluetooth").bold().padding()
-            NavigationLink( destination: ServerCom(heart: $heart, O2:$O2, steps:$steps, temp:$temp)){
+            NavigationLink( destination: ServerCom(heart: $heart, O2:$O2, steps:$steps, temp:$temp, user_id: $user_id)){
                  Text("Fetch Data").bold().padding()
+            }
+            NavigationLink(destination: Login(user_id: $user_id)){
+                Text("Login").bold().padding()
             }
             
             
           }
         }
     }
-
+    }
 }
 
 

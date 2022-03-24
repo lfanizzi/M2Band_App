@@ -16,11 +16,15 @@ struct ServerCom: View {
     //@State var indexing = 0
     //@State var temp = ""
     //@State var heart2 = 0
-   
+    @State var change_heart = ""
+    @State var change_o2 = ""
+    @State var change_temp = ""
+    @State var change = false
     @Binding var heart : Int
     @Binding var O2 : Int
     @Binding var steps : Int
     @Binding var temp : Double
+    @Binding var user_id : String
     var components : Array<String> = Array()
     var components2 : Array<String> = Array()
     var body: some View {
@@ -33,6 +37,17 @@ struct ServerCom: View {
         Button("Test POST Request"){
            //put_request()
             post_request()
+        }.padding()
+        Button("Change Data"){
+            change = !change
+        }
+        if change{
+            TextField("Heart Rate \n", text: $change_heart)
+            TextField("Blood Oxygen \n", text: $change_o2)
+            TextField("Temperature", text: $change_temp)
+            Button("Submit Changes"){
+                change_data()
+            }
         }
         ScrollView{
             Text("Data is here: \(data1)")    //("Data is here: \(data1)")
@@ -42,7 +57,7 @@ struct ServerCom: View {
     func get_request(){
         
         // Create URL
-        let url = URL(string: "https://m2band.hopto.org/getAllSensorData")
+        let url = URL(string:"https://m2band.hopto.org/getSensorData?user_id=\(user_id)") //"https://m2band.hopto.org/getAllSensorData")
        // let url = URL(string: "http://192.168.1.236:8080/")
         guard let requestUrl = url else { fatalError() }
 
@@ -111,42 +126,80 @@ struct ServerCom: View {
         
     }
     
-    func put_request(){
+    func post_request(){
         // Create URL
-        let url = URL(string: "https://m2band.hopto.org/")
+        let url = URL(string: "https://m2band.hopto.org/login?username=user_\(user_id)&password=user_\(user_id)")
         guard let requestUrl = url else { fatalError() }
 
         // Create URL Request
         var request = URLRequest(url: requestUrl)
 
         // Specify HTTP Method to use
-        request.httpMethod = "PUT"
-
-        
+        request.httpMethod = "GET"
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            
+            // Check if Error took place
+            if let error = error {
+                print("Error took place \(error)")
+                return
+            }
+            
+            // Read HTTP Response Status code
+            if let response = response as? HTTPURLResponse {
+                print("Response HTTP Status code: \(response.statusCode)")
+            }
+            
+            // Convert HTTP Response Data to a simple String
+            if let data = data, let dataString = String(data: data, encoding: .utf8) {
+                data1 = dataString
+            }
+            
+        }
+    
+        task.resume()
+    }
+    
+    
+    func change_data() {
+        let url = URL(string:"https://m2band.hopto.org/addSensorData?user_id=\(user_id)&heart_rate=40&blood_o2=67&temperature=90")
        
-        
-    }
-    
-    
-    func post_request() {
-        let url = URL(string:"https://m2band.hopto.org/") //"https://m2band.hopto.org/login?username={user_1}&password={user_1}")
-       // let url = URL(string: "http://192.168.1.236:8080/")
         guard let requestUrl = url else { fatalError() }
 
         // Create URL Request
         var request = URLRequest(url: requestUrl)
-
-        // Specify HTTP Method to use
-        request.httpMethod = "POST"
-  
+        request.httpMethod = "GET"
+        
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+        if let error = error {
+            print("Error took place \(error)")
+            return
+        }
+        
+        // Read HTTP Response Status code
+        if let response = response as? HTTPURLResponse {
+            print("Response HTTP Status code: \(response.statusCode)")
+        }
+        
+        // Convert HTTP Response Data to a simple String
+        if let data = data, let dataString = String(data: data, encoding: .utf8) {
+            data1 = dataString
+        }
+            if data1.contains("sensor data added for"){
+                heart = Int(change_heart)!
+                O2 = Int(change_o2)!
+                temp = Double(change_temp)!
+            }
+        change = false
+       
+            
     }
-    
-        struct TaskEntry: Codable  {
+        task.resume()
+        /*struct TaskEntry: Codable  {
             let id: Int
             let title: String
-        }
+        }*/
     
     
 }
     
-
+}

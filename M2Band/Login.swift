@@ -17,22 +17,42 @@ struct Login: View {
     @State public var password = ""
     @State public var data1 = ""
     @Binding public var user_id : String
+    @Binding public var login2 : Bool
     
     var body: some View {
         VStack{
-            Text("Please Enter Your Credentials").font(.title).foregroundColor(.blue)
-            TextField("Username: \n", text: $username)
-            TextField("Password: \n", text: $password)
-           // TextField("User ID Number\n", text: $user_id)
+            if(login2){
+                Text("Please Enter Your Credentials").font(.title2).foregroundColor(.blue).bold().padding()
+                TextField(" Username: \n", text: $username)
+                TextField(" Password: \n", text: $password)
+                //TextField("User ID Number\n", text: $user_id)
+                if(data1.contains("user does not exist")){
+                    Text("Login Failed, Please Try Again.").font(.title2).bold().foregroundColor(.red).padding()
+                }
+                Button("Login"){
+                    post_request()
+                    if(data1.contains("success")){
+                        Text("Login Success!").font(.title2).bold().foregroundColor(.blue).padding()
+                        login2 = false
+                    }
+                }
             
-            Button("Login"){
-                post_request()
-            }
-            ScrollView{
-               Text( "\(data1)")
+            }//if statement
+            else{
+                
+                    Image("profile").resizable().renderingMode(.original).frame(width:100, height: 100).padding()
+                    Text("Profile").font(.title2).bold().padding()
+                    
+                ScrollView{
+                    Text("Currently logged into M2Band").font(.title2).padding()
+                    Text("Username: \(username)").font(.title3).padding()
+                
+                    Button("Logout"){
+                        login2 = true
+                    }
+                }
+    }//vstack
         }
-    }
-
 }
 
 
@@ -81,7 +101,7 @@ func post_request(){
                 user_id = "5"
             }
         }
-        print(user_id)
+        //print(user_id)
     }
 
     task.resume()

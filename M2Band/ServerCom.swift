@@ -32,6 +32,7 @@ struct ServerCom: View {
        // Text("Here is the Fetched Data: ").padding().font(.title)
         Button("Test GET Request"){
             get_request()
+            
         }.padding()
         
         Button("Test POST Request"){
@@ -57,7 +58,7 @@ struct ServerCom: View {
     func get_request(){
         
         // Create URL
-        let url = URL(string:"https://m2band.hopto.org/getSensorData?user_id=\(user_id)") //"https://m2band.hopto.org/getAllSensorData")
+        let url = URL(string:"https://m2band.hopto.org/getSensorData?user_id=\(user_id)&entry_id=1") //"https://m2band.hopto.org/getAllSensorData")
        // let url = URL(string: "http://192.168.1.236:8080/")
         guard let requestUrl = url else { fatalError() }
 

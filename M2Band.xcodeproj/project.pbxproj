@@ -21,6 +21,9 @@
 		EA9B1E8E273AD29100C0F7DD /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EA9B1E8D273AD29100C0F7DD /* Icon.png */; };
 		EAB31F7E27E8FFBE00DADA8A /* ServerCom.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB31F7D27E8FFBE00DADA8A /* ServerCom.swift */; };
 		EAB31F8427EBCF6D00DADA8A /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB31F8327EBCF6D00DADA8A /* Login.swift */; };
+		EAB31F8827F627D700DADA8A /* Launch_Screen2.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB31F8727F627D700DADA8A /* Launch_Screen2.swift */; };
+		EAB31F8A27FA047500DADA8A /* history.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB31F8927FA047400DADA8A /* history.swift */; };
+		EAB31F8C27FA08B400DADA8A /* settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB31F8B27FA08B400DADA8A /* settings.swift */; };
 		EAD5F3FB275FFB7E00B23576 /* TransferService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD5F3FA275FFB7E00B23576 /* TransferService.swift */; };
 		EAD853E6275E93010048324A /* progressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD853E5275E93000048324A /* progressView.swift */; };
 		EAE29EA927D7CE8800F66357 /* DataCom.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE29EA827D7CE8800F66357 /* DataCom.swift */; };
@@ -63,6 +66,9 @@
 		EA9B1E8D273AD29100C0F7DD /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../../Icon.png; sourceTree = "<group>"; };
 		EAB31F7D27E8FFBE00DADA8A /* ServerCom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerCom.swift; sourceTree = "<group>"; };
 		EAB31F8327EBCF6D00DADA8A /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		EAB31F8727F627D700DADA8A /* Launch_Screen2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Launch_Screen2.swift; sourceTree = "<group>"; };
+		EAB31F8927FA047400DADA8A /* history.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = history.swift; sourceTree = "<group>"; };
+		EAB31F8B27FA08B400DADA8A /* settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settings.swift; sourceTree = "<group>"; };
 		EAD5F3FA275FFB7E00B23576 /* TransferService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferService.swift; sourceTree = "<group>"; };
 		EAD853E5275E93000048324A /* progressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = progressView.swift; sourceTree = "<group>"; };
 		EAE29EA827D7CE8800F66357 /* DataCom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCom.swift; sourceTree = "<group>"; };
@@ -123,7 +129,10 @@
 			isa = PBXGroup;
 			children = (
 				EA01E6FC271F822A0090B5E7 /* M2BandApp.swift */,
+				EAB31F8727F627D700DADA8A /* Launch_Screen2.swift */,
 				EA9B1E8A2739CDD100C0F7DD /* Main_Screen.swift */,
+				EAB31F8B27FA08B400DADA8A /* settings.swift */,
+				EAB31F8927FA047400DADA8A /* history.swift */,
 				EAB31F7D27E8FFBE00DADA8A /* ServerCom.swift */,
 				EAB31F8327EBCF6D00DADA8A /* Login.swift */,
 				EAE29EA827D7CE8800F66357 /* DataCom.swift */,
@@ -297,16 +306,19 @@
 			files = (
 				EAEEB4232756CDBD007ED3C3 /* ViewController.swift in Sources */,
 				EA9B1E8B2739CDD100C0F7DD /* Main_Screen.swift in Sources */,
+				EAB31F8827F627D700DADA8A /* Launch_Screen2.swift in Sources */,
 				EA3A838F277CB9C2002DE2E1 /* server.swift in Sources */,
 				EAB31F8427EBCF6D00DADA8A /* Login.swift in Sources */,
 				EAB31F7E27E8FFBE00DADA8A /* ServerCom.swift in Sources */,
 				EA01E7612728A2B10090B5E7 /* band.swift in Sources */,
 				EAEEB3EB275691EC007ED3C3 /* BT Connect Screen.swift in Sources */,
+				EAB31F8A27FA047500DADA8A /* history.swift in Sources */,
 				EA01E6FD271F822A0090B5E7 /* M2BandApp.swift in Sources */,
 				EA8537BB275981D200AB5E63 /* BT.swift in Sources */,
 				EAD5F3FB275FFB7E00B23576 /* TransferService.swift in Sources */,
 				EAD853E6275E93010048324A /* progressView.swift in Sources */,
 				EAE29EA927D7CE8800F66357 /* DataCom.swift in Sources */,
+				EAB31F8C27FA08B400DADA8A /* settings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,21 +8,27 @@
 import SwiftUI
 import CoreBluetooth
 import Foundation
-public var is_BT = false
+
 var i = 0
 @main
 
 struct M2BandApp: App {
-    
+    @State public var launch2 = true
+    @State public var login2 = false//true
     var body: some Scene {
         
         WindowGroup{
            
-           
-        
-              Main_Screen()
+            if(launch2){
+                Launch_Screen2(launch2: $launch2)
+            }
+          //  if(login2){
+            //    Login()
+           // }
+            else{
+                Main_Screen()//.transition(.move(edge: .bottom).animation(.easeInOut(duration: 5)))
             
-            
+            }
             
            // switchViews(is_BT: changeBT(BT: get_is_BT()))
             
@@ -37,18 +43,14 @@ struct M2BandApp: App {
    
     
 }
-public func get_is_BT() -> Bool{
-    return is_BT
-}
+
 
 @ViewBuilder public func switchViews(is_BT : Bool ) -> some View{
     
     if(!is_BT){
        Main_Screen()
     }
-    else{
-        BT_Connect_Screen()
-    }
+   
 }
 public func showBT(butt : Bool) -> Void{
     

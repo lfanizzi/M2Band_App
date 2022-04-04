@@ -10,12 +10,7 @@ import SwiftUI
 import UIKit
 
 struct ServerCom: View {
-   
-    //@State var v = "c"
     @State var data1 = ""
-    //@State var indexing = 0
-    //@State var temp = ""
-    //@State var heart2 = 0
     @State var change_heart = ""
     @State var change_o2 = ""
     @State var change_temp = ""
@@ -56,18 +51,13 @@ struct ServerCom: View {
     }
     
     func get_request(){
-        
         // Create URL
         let url = URL(string:"https://m2band.hopto.org/getSensorData?user_id=\(user_id)&entry_id=1") //"https://m2band.hopto.org/getAllSensorData")
        // let url = URL(string: "http://192.168.1.236:8080/")
         guard let requestUrl = url else { fatalError() }
-
         // Create URL Request
         var request = URLRequest(url: requestUrl)
-
         request.httpMethod = "GET"
-       
-
         // Send HTTP Request
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             
@@ -90,7 +80,7 @@ struct ServerCom: View {
             var components = data1.replacingOccurrences(of: "\"", with: "").replacingOccurrences(of: "[", with: "").replacingOccurrences(of: "{", with: "").replacingOccurrences(of: "}", with: "").replacingOccurrences(of: "]", with: "").replacingOccurrences(of: " ", with: "").replacingOccurrences(of: "\"", with: "").replacingOccurrences(of: "data:", with: "").replacingOccurrences(of: "message:sensordataforallusers", with: "").components(separatedBy: ",")
                 
                
-           //Below is for extracting data to binding components
+           //Below is for taking data
             for i in components{
                 if i.contains("heart_rate"){
                    let i = i.replacingOccurrences(of: "heart_rate:", with: "")

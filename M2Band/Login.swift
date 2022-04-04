@@ -14,25 +14,32 @@ import UIKit
 
 struct Login: View {
     @State public var username = ""
+   // @State public var username2 = ""
     @State public var password = ""
     @State public var data1 = ""
     @Binding public var user_id : String
     @Binding public var login2 : Bool
+    @Binding public var username2 : String
     
     var body: some View {
         VStack{
             if(login2){
+                Image("band").resizable().frame(width: 100, height: 100)
                 Text("Please Enter Your Credentials").font(.title2).foregroundColor(.blue).bold().padding()
                 TextField(" Username: \n", text: $username)
                 TextField(" Password: \n", text: $password)
+                
                 //TextField("User ID Number\n", text: $user_id)
                 if(data1.contains("user does not exist")){
                     Text("Login Failed, Please Try Again.").font(.title2).bold().foregroundColor(.red).padding()
                 }
+                if(data1.contains("success")){
+                    Text("Login Success!").font(.title2).bold().foregroundColor(.blue).padding()
+                }
                 Button("Login"){
                     post_request()
                     if(data1.contains("success")){
-                        Text("Login Success!").font(.title2).bold().foregroundColor(.blue).padding()
+                        Text("Login Success!").font(.title2).bold()
                         login2 = false
                     }
                 }
@@ -45,8 +52,9 @@ struct Login: View {
                     
                 ScrollView{
                     Text("Currently logged into M2Band").font(.title2).padding()
-                    Text("Username: \(username)").font(.title3).padding()
-                
+                    Text("Username: \(username2)").font(.title3).padding()
+                    Text("User ID #:   \(user_id)").font(.title3).padding()
+                    
                     Button("Logout"){
                         login2 = true
                     }
@@ -58,6 +66,9 @@ struct Login: View {
 
 func post_request(){
     // Create URL
+    //print(username)
+    username2 = username
+    //print(username2)
     let url = URL(string: "https://m2band.hopto.org/login?username=\(username)&password=\(password)")
     
     guard let requestUrl = url else { fatalError() }

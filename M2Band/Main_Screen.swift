@@ -68,7 +68,7 @@ struct Main_Screen: View{
             }
             
                  HStack {
-                     NavigationLink(destination: settings()) {
+                     NavigationLink(destination: settings(user_id : $user_id)) {
                          Image("gear2").resizable().renderingMode(.original).frame(width: 50, height: 50, alignment: .leading).foregroundColor(.blue)
                           }.buttonStyle(ThemeAnimationStyle()).padding()
                      NavigationLink(destination: Login(user_id:$user_id, login2: $login2, username2: $username2)) {

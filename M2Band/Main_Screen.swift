@@ -10,16 +10,18 @@ import UIKit
 struct Main_Screen: View{
     @State public var user_id = ""
     @State public var username2 = ""
-    @State public var Progress = 0//87
+    @State public var Progress = "0%"//87
     @State public var BT = false
     @State var heart  = 0//95//81
     @State public var O2 = 0//95 //98
-    @State public var steps = 0//2156
+    @State public var steps = "0"//2156
     @State public var temp = 0.0//102.0//98
     @State public var login2 = true
     @State var data1 = ""
     @State public var careTaker = false
     @State public var dat = ""
+    @State public var goal = "0"
+    
     let timer = Timer.publish(every: 1, on: .current, in: .common).autoconnect()
     
     var body: some View {
@@ -91,7 +93,7 @@ struct Main_Screen: View{
                 }
                 
                      HStack {
-                         NavigationLink(destination: settings(user_id : $user_id)) {
+                         NavigationLink(destination: settings(user_id : $user_id, Progress: $Progress, goal:$goal)) {
                              Image("gear2").resizable().renderingMode(.original).frame(width: 50, height: 50, alignment: .leading).foregroundColor(.blue)
                               }.buttonStyle(ThemeAnimationStyle()).padding()
                          NavigationLink(destination: Login(user_id:$user_id, login2: $login2, username2: $username2, careTaker: $careTaker)) {
@@ -159,7 +161,7 @@ struct Main_Screen: View{
             }
             
                  HStack {
-                     NavigationLink(destination: settings(user_id : $user_id)) {
+                     NavigationLink(destination: settings(user_id : $user_id, Progress: $Progress, goal:$goal)) {
                          Image("gear2").resizable().renderingMode(.original).frame(width: 50, height: 50, alignment: .leading).foregroundColor(.blue)
                           }.buttonStyle(ThemeAnimationStyle()).padding()
                      NavigationLink(destination: Login(user_id:$user_id, login2: $login2, username2: $username2, careTaker: $careTaker)) {
@@ -169,12 +171,7 @@ struct Main_Screen: View{
                          Image("history").resizable().renderingMode(.original).frame(width: 50, height: 50, alignment: .leading).foregroundColor(.blue)
                      }.buttonStyle(ThemeAnimationStyle()).padding()
                      
-                    // Button("Refresh"){
-                        // updateValues()
-                    // }.foregroundColor(.black)
-                     //Button("Refresh"){
-                         //updateValues()
-                    // }
+                    
                      //NavigationLink( destination: ServerCom(heart: $heart, O2:$O2, steps:$steps, temp:$temp, user_id: $user_id)){
                         // Text("$").bold().padding().foregroundColor(.black)
                     // }.buttonStyle(ThemeAnimationStyle()).padding()
@@ -276,6 +273,23 @@ struct ThemeAnimationStyle: ButtonStyle {
                     break
                 }
             }
+            
+            for i in components{
+                if i.contains("steps"){
+                   let i = i.replacingOccurrences(of: "steps:", with: "")
+                    steps = i
+                    break
+                }
+            }
+            
+            let steps_int = Int(steps)!
+            
+            if(!goal.elementsEqual("") && !goal.elementsEqual("0")){
+                let goal_int = Int(goal)!
+                let progress_int = steps_int/goal_int
+                Progress = "\(progress_int)%"
+            }
+            
             
            
             

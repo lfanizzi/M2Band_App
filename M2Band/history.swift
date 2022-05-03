@@ -15,15 +15,23 @@ import SwiftUI
 struct history: View{
     @State public var data1 = ""
     @Binding public var user_id : String
+    //@Binding public var history_bool : Bool
+    let timer = Timer.publish(every: 1, on: .current, in: .common).autoconnect()
     var body : some View{
         Image("history").resizable().renderingMode(.original).frame(width:100, height: 100).padding()
         Text("History").font(.title2).bold().padding()
-        Button("Get History"){
-            get_request()
-        }
+        //Button("Get History"){
+            //get_request()
+        //}
     ScrollView{
-        Text("\(data1)")
-    }
+    
+            Text("\(data1)")
+        
+        
+    }.onReceive(timer, perform: { _ in
+        print("updating history table")
+        get_request()
+    })
     }
 
 

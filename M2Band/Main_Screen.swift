@@ -20,6 +20,8 @@ struct Main_Screen: View{
     @State var data1 = ""
     @State public var careTaker = false
     @State public var dat = ""
+    let timer = Timer.publish(every: 1, on: .current, in: .common).autoconnect()
+    
     var body: some View {
         if (login2){
             Login(user_id: $user_id, login2: $login2, username2: $username2, careTaker: $careTaker)
@@ -102,7 +104,10 @@ struct Main_Screen: View{
                      }.frame(height: 100)//.transition(.move(edge: .top)).animation(.easeIn(duration: 5))
               }//vstack
             }//zstack
-            }//nav view
+            }.onReceive(timer, perform: { _ in
+                print("updating")
+                updateValues()
+            })//nav view
             
             
             
@@ -167,14 +172,17 @@ struct Main_Screen: View{
                     // Button("Refresh"){
                         // updateValues()
                     // }.foregroundColor(.black)
-                     Button("Refresh"){
-                         updateValues()
-                     }
+                     //Button("Refresh"){
+                         //updateValues()
+                    // }
                      //NavigationLink( destination: ServerCom(heart: $heart, O2:$O2, steps:$steps, temp:$temp, user_id: $user_id)){
                         // Text("$").bold().padding().foregroundColor(.black)
                     // }.buttonStyle(ThemeAnimationStyle()).padding()
                  }.frame(height: 100)//.transition(.move(edge: .top)).animation(.easeIn(duration: 5))
-        }//vstack
+        }.onReceive(timer, perform: { _ in
+            print("updating")
+            updateValues()
+        })//vstack
         }//ZStack
         }//navView.
         }
@@ -212,19 +220,10 @@ struct ThemeAnimationStyle: ButtonStyle {
         var minutes = (Calendar.current.component(.minute, from: date))
         var seconds = (Calendar.current.component(.second, from: date))
         seconds -= 5
-        //minutes -= 1
-        //dat = just_date.replacingOccurrences(of: ".", with: "-")
-            
-        
-        
-        let date2 = dat.replacingOccurrences(of: ".", with: "-").replacingOccurrences(of: " ", with: "")
-       
-        
-        
         //let url = URL(string: "https://m2band.hopto.org/get/oximeter/user_id/1?filter=entry_time%3E%22\"2022-04-05%2015:29:41.223%22") //this works
         //let url = URL(string: "https://m2band.hopto.org/get/oximeter/user_id/\(user_id)?filter=(entry_time%20%3E%20%222022-05-03%2013:29:05%22)")//works
         let url = URL(string: "https://m2band.hopto.org/get/oximeter/user_id/\(user_id)?filter=(entry_time%20%3E%20%22\(just_date)%20\(hours):\(minutes):\(seconds)%22)")//works
-        //print(url)
+        
         guard let requestUrl = url else { fatalError() }
         // Create URL Request
         var request = URLRequest(url: requestUrl)

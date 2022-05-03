@@ -19,7 +19,7 @@ struct Main_Screen: View{
     @State public var login2 = true
     @State var data1 = ""
     @State public var careTaker = false
-    
+    @State public var dat = ""
     var body: some View {
         if (login2){
             Login(user_id: $user_id, login2: $login2, username2: $username2, careTaker: $careTaker)
@@ -201,23 +201,30 @@ struct ThemeAnimationStyle: ButtonStyle {
     public func updateValues(){
         //Timing component for pulling relavant data
         let date = Date()
+        let dateFormatter = DateFormatter()
+         
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+         
+        let just_date = dateFormatter.string(from: date)
         
-        let hours   = (Calendar.current.component(.hour, from: date))
-        let minutes = (Calendar.current.component(.minute, from: date))
+        //let day = (Calendar.current.component(.day, from: date))
+        var hours   = (Calendar.current.component(.hour, from: date))
+        var minutes = (Calendar.current.component(.minute, from: date))
         var seconds = (Calendar.current.component(.second, from: date))
-        seconds -= 2
-        let dat = "\(date)\(hours):\(minutes):\(seconds)"
-        let date2 = dat.replacingOccurrences(of: "+0000 ", with: "")
+        seconds -= 5
+        //minutes -= 1
+        //dat = just_date.replacingOccurrences(of: ".", with: "-")
+            
+        
+        
+        let date2 = dat.replacingOccurrences(of: ".", with: "-").replacingOccurrences(of: " ", with: "")
        
-        // print("\(hours):\(minutes):\(seconds)")
-        //print(date)
         
-        // Create URL
-        //let url = URL(string:"https://m2band.hopto.org/getSensorData?user_id=\(user_id)&entry_id=1")
-        let url = URL(string:"https://m2band.hopto.org/get/oximeter/user_id/\(user_id)?filter=(entry_time")
         
-       // let url = URL(string:"https://m2band.hopto.org/get/oximeter/user_id/\(user_id)?filter=(entry_time>\"\(date2)\")")
-        print(url)
+        //let url = URL(string: "https://m2band.hopto.org/get/oximeter/user_id/1?filter=entry_time%3E%22\"2022-04-05%2015:29:41.223%22") //this works
+        //let url = URL(string: "https://m2band.hopto.org/get/oximeter/user_id/\(user_id)?filter=(entry_time%20%3E%20%222022-05-03%2013:29:05%22)")//works
+        let url = URL(string: "https://m2band.hopto.org/get/oximeter/user_id/\(user_id)?filter=(entry_time%20%3E%20%22\(just_date)%20\(hours):\(minutes):\(seconds)%22)")//works
+        //print(url)
         guard let requestUrl = url else { fatalError() }
         // Create URL Request
         var request = URLRequest(url: requestUrl)
@@ -248,8 +255,8 @@ struct ThemeAnimationStyle: ButtonStyle {
             for i in components{
                 if i.contains("heart_rate"){
                    let i = i.replacingOccurrences(of: "heart_rate:", with: "")
-                    heart = Int(i)!
-                    break
+                        heart = Int(i)!
+                        break
                 }
             }
             

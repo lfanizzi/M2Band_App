@@ -20,7 +20,8 @@ struct Login: View {
     @Binding public var user_id : String
     @Binding public var login2 : Bool
     @Binding public var username2 : String
-    
+    @Binding public var careTaker : Bool
+
     var body: some View {
         VStack{
             if(login2){
@@ -43,6 +44,12 @@ struct Login: View {
                         login2 = false
                     }
                 }
+                
+                Toggle("Caretaker Mode", isOn: $careTaker)
+
+                            if careTaker {
+                                Text("Caretaker Mode on.")
+                            }
             
             }//if statement
             else{
@@ -96,6 +103,12 @@ func post_request(){
             data1 = dataString
         }
         if data1.contains("user login success"){
+            var components = data1.replacingOccurrences(of: "user_id", with: "").replacingOccurrences(of: ":", with: "").replacingOccurrences(of: "\"", with: "").replacingOccurrences(of: " ", with: "").components(separatedBy: ",")
+            //print(components.remove(at: 1))
+            
+            user_id = components.remove(at: 1)
+            //print("user_id is \(user_id)")
+            /*
             if(data1.contains("1")){
                 user_id = "1"
             }
@@ -111,6 +124,8 @@ func post_request(){
             else if(data1.contains("5")){
                 user_id = "5"
             }
+             */
+            
         }
         //print(user_id)
     }
@@ -121,6 +136,8 @@ func post_request(){
     func addVitalData(user_id : Int){
          
     }
+    
+    
     
 }
 /*

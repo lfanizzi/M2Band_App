@@ -12,16 +12,102 @@ struct Main_Screen: View{
     @State public var username2 = ""
     @State public var Progress = 0//87
     @State public var BT = false
-    @State var heart  = 0//81
-    @State public var O2 = 0//98
+    @State var heart  = 0//95//81
+    @State public var O2 = 0//95 //98
     @State public var steps = 0//2156
-    @State public var temp = 0.0//98
+    @State public var temp = 0.0//102.0//98
     @State public var login2 = true
     @State var data1 = ""
+    @State public var careTaker = false
     
     var body: some View {
         if (login2){
-            Login(user_id: $user_id, login2: $login2, username2: $username2)
+            Login(user_id: $user_id, login2: $login2, username2: $username2, careTaker: $careTaker)
+        }
+       
+        
+        else if(careTaker){
+            NavigationView{
+        ZStack{
+            Color(.gray).opacity(0.2).edgesIgnoringSafeArea(.all)
+            VStack(spacing: 1){
+                
+                Text("M2Band").fontWeight(.bold).font(.title).frame(width: 120, height: 80, alignment: .topLeading)
+                
+                Image("band").resizable().frame(width: 75, height: 75).padding()
+
+                HStack{
+                    Text("  Heart Rate (BPM) :    ").fontWeight(.bold).frame(alignment: .leading)
+                    Text("\(heart)").fontWeight(.bold).padding().padding().frame(alignment: .center)
+                    Spacer()
+                     
+                    if(heart < 60 || heart > 100){
+                        Image("Emergency").resizable().frame(width: 50, height: 35).padding()
+                        }
+                    
+                    else if(heart < 70 || heart > 90 ){
+                        Image("Warning_Symbol").resizable().frame(width: 50, height: 35).padding()
+                    }
+                    
+                }
+                HStack{
+                    Text("  Blood O2 Level:          ").fontWeight(.bold).frame(alignment: .leading)
+                    Text("\(O2)").fontWeight(.bold).padding().padding().frame(alignment: .center)
+                    Spacer()
+                    if(O2 <= 96 && O2 > 93){
+                        Image("Warning_Symbol").resizable().frame(width: 50, height: 35).padding()
+                    }
+                    else if(O2 < 93){
+                        Image("Emergency").resizable().frame(width: 50, height: 35).padding()
+                    }
+                    
+                }
+                HStack{
+                    Text("  Steps:                             ").fontWeight(.bold).frame(alignment: .leading)
+                    Text("\(steps)").fontWeight(.bold).padding().padding().frame(alignment: .center)
+                    Spacer()
+                    //Image("steps_icon").resizable().frame(width: 50, height: 35).padding()
+                }
+                HStack{
+                    Text("  Temperature:                 ").fontWeight(.bold).frame(alignment: .leading)
+                    Text("\(Int(temp))").fontWeight(.bold).padding().frame(alignment: .center)
+                    Spacer()
+                    if(temp > 100.4 && temp < 103){
+                        Image("Warning_Symbol").resizable().frame(width: 50, height: 35).padding()
+                    }
+                    else if(temp > 103){
+                        Image("Emergency").resizable().frame(width: 50, height: 35).padding()
+                    }
+                   
+                }
+                
+                HStack{
+                    Text("  Progress:                      ").fontWeight(.bold).frame(alignment: .leading)
+                    Text("\(Progress)").fontWeight(.bold).padding().padding().frame(alignment: .center)
+                    Spacer()
+                    //Image("progress_icon").resizable().frame(width: 50, height: 50).padding()
+                }
+                
+                     HStack {
+                         NavigationLink(destination: settings(user_id : $user_id)) {
+                             Image("gear2").resizable().renderingMode(.original).frame(width: 50, height: 50, alignment: .leading).foregroundColor(.blue)
+                              }.buttonStyle(ThemeAnimationStyle()).padding()
+                         NavigationLink(destination: Login(user_id:$user_id, login2: $login2, username2: $username2, careTaker: $careTaker)) {
+                            Image("profile").resizable().renderingMode(.original).frame(width: 50, height: 50, alignment: .leading).foregroundColor(.blue)
+                            }.buttonStyle(ThemeAnimationStyle()).padding()
+                         NavigationLink(destination: history(user_id:$user_id)) {
+                             Image("history").resizable().renderingMode(.original).frame(width: 50, height: 50, alignment: .leading).foregroundColor(.blue)
+                         }.buttonStyle(ThemeAnimationStyle()).padding()
+                         
+                     }.frame(height: 100)//.transition(.move(edge: .top)).animation(.easeIn(duration: 5))
+              }//vstack
+            }//zstack
+            }//nav view
+            
+            
+            
+            
+            
         }
         else{
         NavigationView{
@@ -71,27 +157,30 @@ struct Main_Screen: View{
                      NavigationLink(destination: settings(user_id : $user_id)) {
                          Image("gear2").resizable().renderingMode(.original).frame(width: 50, height: 50, alignment: .leading).foregroundColor(.blue)
                           }.buttonStyle(ThemeAnimationStyle()).padding()
-                     NavigationLink(destination: Login(user_id:$user_id, login2: $login2, username2: $username2)) {
+                     NavigationLink(destination: Login(user_id:$user_id, login2: $login2, username2: $username2, careTaker: $careTaker)) {
                         Image("profile").resizable().renderingMode(.original).frame(width: 50, height: 50, alignment: .leading).foregroundColor(.blue)
                         }.buttonStyle(ThemeAnimationStyle()).padding()
-                     NavigationLink(destination: history()) {
+                     NavigationLink(destination: history(user_id:$user_id)) {
                          Image("history").resizable().renderingMode(.original).frame(width: 50, height: 50, alignment: .leading).foregroundColor(.blue)
                      }.buttonStyle(ThemeAnimationStyle()).padding()
                      
                     // Button("Refresh"){
                         // updateValues()
                     // }.foregroundColor(.black)
-                     
-                     NavigationLink( destination: ServerCom(heart: $heart, O2:$O2, steps:$steps, temp:$temp, user_id: $user_id)){
-                         Text("$").bold().padding().foregroundColor(.black)
-                     }.buttonStyle(ThemeAnimationStyle()).padding()
+                     Button("Refresh"){
+                         updateValues()
+                     }
+                     //NavigationLink( destination: ServerCom(heart: $heart, O2:$O2, steps:$steps, temp:$temp, user_id: $user_id)){
+                        // Text("$").bold().padding().foregroundColor(.black)
+                    // }.buttonStyle(ThemeAnimationStyle()).padding()
                  }.frame(height: 100)//.transition(.move(edge: .top)).animation(.easeIn(duration: 5))
-          }//vstack
+        }//vstack
+        }//ZStack
+        }//navView.
         }
-      }
+        
     }
-  }
-
+    
 
 struct ThemeAnimationStyle: ButtonStyle {
     func makeBody(configuration: Self.Configuration) -> some View {
@@ -106,15 +195,29 @@ struct ThemeAnimationStyle: ButtonStyle {
     }
 }
 
-func updateValues(){
-    get_request()
-}
 
 
-    func get_request(){
+
+    public func updateValues(){
+        //Timing component for pulling relavant data
+        let date = Date()
+        
+        let hours   = (Calendar.current.component(.hour, from: date))
+        let minutes = (Calendar.current.component(.minute, from: date))
+        var seconds = (Calendar.current.component(.second, from: date))
+        seconds -= 2
+        let dat = "\(date)\(hours):\(minutes):\(seconds)"
+        let date2 = dat.replacingOccurrences(of: "+0000 ", with: "")
+       
+        // print("\(hours):\(minutes):\(seconds)")
+        //print(date)
+        
         // Create URL
-        let url = URL(string:"https://m2band.hopto.org/getSensorData?user_id=\(user_id)&entry_id=1") //"https://m2band.hopto.org/getAllSensorData")
-       // let url = URL(string: "http://192.168.1.236:8080/")
+        //let url = URL(string:"https://m2band.hopto.org/getSensorData?user_id=\(user_id)&entry_id=1")
+        let url = URL(string:"https://m2band.hopto.org/get/oximeter/user_id/\(user_id)?filter=(entry_time")
+        
+       // let url = URL(string:"https://m2band.hopto.org/get/oximeter/user_id/\(user_id)?filter=(entry_time>\"\(date2)\")")
+        print(url)
         guard let requestUrl = url else { fatalError() }
         // Create URL Request
         var request = URLRequest(url: requestUrl)

@@ -13,7 +13,7 @@ var i = 0
 @main
 
 struct M2BandApp: App {
-    @State public var launch2 = true
+    @State public var launch2 = false //true
     @State public var login2 = false//true
     var body: some Scene {
         
@@ -27,13 +27,14 @@ struct M2BandApp: App {
            // }
             else{
                 Main_Screen()//.transition(.move(edge: .bottom).animation(.easeInOut(duration: 5)))
-            
+                
             }
             
            // switchViews(is_BT: changeBT(BT: get_is_BT()))
             
 
         }
+        
         }
     
     

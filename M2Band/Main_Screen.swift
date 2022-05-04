@@ -10,7 +10,7 @@ import UIKit
 struct Main_Screen: View{
     @State public var user_id = ""
     @State public var username2 = ""
-    @State public var Progress = "0%"//87
+    @State public var Progress = "0.0%"//87
     @State public var BT = false
     @State var heart  = 0//95//81
     @State public var O2 = 0//95 //98
@@ -22,7 +22,7 @@ struct Main_Screen: View{
     @State public var dat = ""
     @State public var goal = "0"
     
-    let timer = Timer.publish(every: 1, on: .current, in: .common).autoconnect()
+    let timer = Timer.publish(every: 5, on: .current, in: .common).autoconnect()
     
     var body: some View {
         if (login2){
@@ -87,7 +87,7 @@ struct Main_Screen: View{
                 
                 HStack{
                     Text("  Progress:                      ").fontWeight(.bold).frame(alignment: .leading)
-                    Text("\(Progress)").fontWeight(.bold).padding().padding().frame(alignment: .center)
+                    Text("   \(Progress)").fontWeight(.bold).padding().padding().frame(alignment: .center)
                     Spacer()
                     //Image("progress_icon").resizable().frame(width: 50, height: 50).padding()
                 }
@@ -155,7 +155,7 @@ struct Main_Screen: View{
             
             HStack{
                 Text("  Progress:                      ").fontWeight(.bold).foregroundColor(.yellow).frame(alignment: .leading)
-                Text("\(Progress)").fontWeight(.bold).padding().foregroundColor(.yellow).padding().frame(alignment: .center)
+                Text("   \(Progress)").fontWeight(.bold).padding().foregroundColor(.yellow).padding().frame(alignment: .center)
                 Spacer()
                 Image("progress_icon").resizable().frame(width: 50, height: 50).padding()
             }
@@ -276,18 +276,33 @@ struct ThemeAnimationStyle: ButtonStyle {
             
             for i in components{
                 if i.contains("steps"){
-                   let i = i.replacingOccurrences(of: "steps:", with: "")
-                    steps = i
-                    break
-                }
-            }
-            
-            let steps_int = Int(steps)!
-            
-            if(!goal.elementsEqual("") && !goal.elementsEqual("0")){
-                let goal_int = Int(goal)!
-                let progress_int = steps_int/goal_int
-                Progress = "\(progress_int)%"
+                    var x = 0
+                    if(x<1){
+                        let i = i.replacingOccurrences(of: "steps:", with: "")
+                        let temp_steps = Int(steps)!
+                        let steps2 = temp_steps + Int(i)!
+                        steps = String(steps2)
+                        x = x+1
+                        
+                        
+                        if((!goal.elementsEqual("")) && (!goal.elementsEqual("0"))){
+                            let steps_int = Int(steps)!
+                            print("Steps_int\(steps_int)")
+                            let goal_int = Int(goal)!
+                            print("goal_int\(goal_int)")
+                            let progress_int = (Double(steps_int)/Double(goal_int))*100
+                            print(progress_int)
+                            Progress = "\(progress_int)%"
+                            x = 0
+                            break
+                    }
+                    }
+                    
+                    //print("Progress............")
+                    
+                    
+                    
+              }
             }
             
             

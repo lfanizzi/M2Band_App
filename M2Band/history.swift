@@ -2,7 +2,7 @@
 //  history.swift
 //  M2Band
 //
-//  Created by Luke Fanizzi on 4/3/22.
+//  Created by Team Greenies on 4/3/22.
 //
 
 import Foundation

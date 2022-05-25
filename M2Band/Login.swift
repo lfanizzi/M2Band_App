@@ -2,7 +2,7 @@
 //  Login.swift
 //  M2Band
 //
-//  Created by Luke Fanizzi on 3/23/22.
+//  Created by Team Greenies on 3/23/22.
 //
 
 import SwiftUI
@@ -21,7 +21,7 @@ struct Login: View {
     @Binding public var login2 : Bool
     @Binding public var username2 : String
     @Binding public var careTaker : Bool
-
+    @Binding public var launch2: Bool
     var body: some View {
         VStack{
             if(login2){

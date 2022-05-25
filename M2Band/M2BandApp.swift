@@ -2,7 +2,7 @@
 //  M2BandApp.swift
 //  M2Band
 //
-//  Created by Luke Fanizzi on 10/19/21.
+//  Created by Team Greenies M2Band on 10/19/21.
 //
 
 import SwiftUI
@@ -26,7 +26,7 @@ struct M2BandApp: App {
             //    Login()
            // }
             else{
-                Main_Screen()//.transition(.move(edge: .bottom).animation(.easeInOut(duration: 5)))
+                Main_Screen(launch2:$launch2)//.transition(.move(edge: .bottom).animation(.easeInOut(duration: 5)))
                 
             }
             
@@ -48,9 +48,9 @@ struct M2BandApp: App {
 
 @ViewBuilder public func switchViews(is_BT : Bool ) -> some View{
     
-    if(!is_BT){
-       Main_Screen()
-    }
+    //if(!is_BT){
+       //Main_Screen()
+   // }
    
 }
 public func showBT(butt : Bool) -> Void{

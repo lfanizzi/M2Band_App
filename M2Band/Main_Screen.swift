@@ -12,7 +12,7 @@ struct Main_Screen: View{
     @State public var username2 = ""
     @State public var Progress = "0.0%"//87
     @State public var BT = false
-    @State var heart  = 0//95//81
+    @State public var heart  = 0//95//81
     @State public var O2 = 0//95 //98
     @State public var steps = "0"//2156
     @State public var temp = 0.0//102.0//98
@@ -21,12 +21,12 @@ struct Main_Screen: View{
     @State public var careTaker = false
     @State public var dat = ""
     @State public var goal = "0"
-    
+    @Binding public var launch2 : Bool
     let timer = Timer.publish(every: 5, on: .current, in: .common).autoconnect()
     
     var body: some View {
         if (login2){
-            Login(user_id: $user_id, login2: $login2, username2: $username2, careTaker: $careTaker)
+            Login(user_id: $user_id, login2: $login2, username2: $username2, careTaker: $careTaker, launch2:$launch2)
         }
        
         
@@ -96,7 +96,7 @@ struct Main_Screen: View{
                          NavigationLink(destination: settings(user_id : $user_id, Progress: $Progress, goal:$goal)) {
                              Image("gear2").resizable().renderingMode(.original).frame(width: 50, height: 50, alignment: .leading).foregroundColor(.blue)
                               }.buttonStyle(ThemeAnimationStyle()).padding()
-                         NavigationLink(destination: Login(user_id:$user_id, login2: $login2, username2: $username2, careTaker: $careTaker)) {
+                         NavigationLink(destination: Login(user_id:$user_id, login2: $login2, username2: $username2, careTaker: $careTaker, launch2:$launch2)) {
                             Image("profile").resizable().renderingMode(.original).frame(width: 50, height: 50, alignment: .leading).foregroundColor(.blue)
                             }.buttonStyle(ThemeAnimationStyle()).padding()
                          NavigationLink(destination: history(user_id:$user_id)) {
@@ -164,7 +164,7 @@ struct Main_Screen: View{
                      NavigationLink(destination: settings(user_id : $user_id, Progress: $Progress, goal:$goal)) {
                          Image("gear2").resizable().renderingMode(.original).frame(width: 50, height: 50, alignment: .leading).foregroundColor(.blue)
                           }.buttonStyle(ThemeAnimationStyle()).padding()
-                     NavigationLink(destination: Login(user_id:$user_id, login2: $login2, username2: $username2, careTaker: $careTaker)) {
+                     NavigationLink(destination: Login(user_id:$user_id, login2: $login2, username2: $username2, careTaker: $careTaker, launch2: $launch2)) {
                         Image("profile").resizable().renderingMode(.original).frame(width: 50, height: 50, alignment: .leading).foregroundColor(.blue)
                         }.buttonStyle(ThemeAnimationStyle()).padding()
                      NavigationLink(destination: history(user_id:$user_id)) {
@@ -304,13 +304,7 @@ struct ThemeAnimationStyle: ButtonStyle {
                     
               }
             }
-            
-            
-           
-            
-            
-                
-            }
+        }
        
     task.resume()
         

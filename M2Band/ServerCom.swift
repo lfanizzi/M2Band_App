@@ -2,7 +2,7 @@
 //  ServerCom.swift
 //  M2Band
 //
-//  Created by Luke Fanizzi on 3/21/22.
+//  Created by Team Greenies on 3/21/22.
 //
 
 import Foundation
@@ -72,7 +72,7 @@ struct ServerCom: View {
                 print("Response HTTP Status code: \(response.statusCode)")
             }
             
-            // Convert HTTP Response Data to a simple String
+            //JSON -> Data string
             if let data = data, let dataString = String(data: data, encoding: .utf8) {
                 data1 = dataString
             }
@@ -140,7 +140,7 @@ struct ServerCom: View {
                 print("Response HTTP Status code: \(response.statusCode)")
             }
             
-            // Convert HTTP Response Data to a simple String
+            // JSON -> Data string
             if let data = data, let dataString = String(data: data, encoding: .utf8) {
                 data1 = dataString
             }
@@ -171,7 +171,7 @@ struct ServerCom: View {
             print("Response HTTP Status code: \(response.statusCode)")
         }
         
-        // Convert HTTP Response Data to a simple String
+        // JSON -> Data string
         if let data = data, let dataString = String(data: data, encoding: .utf8) {
             data1 = dataString
         }
@@ -185,11 +185,6 @@ struct ServerCom: View {
             
     }
         task.resume()
-        /*struct TaskEntry: Codable  {
-            let id: Int
-            let title: String
-        }*/
-    
     
 }
     
